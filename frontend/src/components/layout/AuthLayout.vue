@@ -15,7 +15,7 @@
           <div
             class="mb-4 inline-flex h-16 w-16 items-center justify-center overflow-hidden rounded-surface shadow-lg shadow-primary-500/30"
           >
-            <img :src="siteLogo || '/logo.svg'" alt="Logo" class="h-full w-full object-contain" />
+            <img :src="siteLogo || '/logo.png'" alt="Logo" class="h-full w-full object-contain" />
           </div>
           <!-- Brand headings use the shared page-title colors in light and dark themes. -->
           <h1 class="mb-2 page-title">

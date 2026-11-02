@@ -1,3 +1,4 @@
+import { localizeBrandMessages } from '@/brand/meimaobing'
 import { readStorageWithLegacyKey } from '@/utils/storage'
 import { createI18n } from 'vue-i18n'
 
@@ -114,8 +115,9 @@ export async function loadLocaleMessages(locale: LocaleCode): Promise<void> {
   if (!loader) throw new Error(`Missing language catalog: ${locale}`)
   const module = await loader()
   // Mark a catalog loaded only after its messages are installed, allowing failed
-  // imports to be retried by a later request.
-  i18n.global.setLocaleMessage(locale, module.default)
+  // imports to be retried by a later request. The brand layer rewrites the
+  // installed copy so every later language switch uses the same names.
+  i18n.global.setLocaleMessage(locale, localizeBrandMessages(module.default, locale))
   loadedLocales.add(locale)
 }
 

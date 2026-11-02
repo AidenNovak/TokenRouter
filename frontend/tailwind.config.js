@@ -72,33 +72,33 @@ export default {
         panel: 'var(--max-h-panel)',
       },
       colors: {
-        // Primary blue shades supply the application accent ramp across light and dark themes.
+        // Primary rose shades supply the fork brand accent ramp across light and dark themes.
         primary: {
-          50: '#F6FCFF',
-          100: '#DDF4FC',
-          200: '#BFEAFF',
-          300: '#8BDDF8',
-          400: '#4DD4F6',
-          500: '#00D2FF',
-          600: '#12A7E8',
-          700: '#0B8FD8',
-          800: '#176F9E',
-          900: '#2D4F68',
-          950: '#071A2A',
+          50: '#F9F2F3',
+          100: '#F3EAEC',
+          200: '#E6D9DC',
+          300: '#D9C6CB',
+          400: '#CBB0B6',
+          500: '#A06B78',
+          600: '#734049',
+          700: '#5C3239',
+          800: '#4A3E43',
+          900: '#3A3034',
+          950: '#241C20',
         },
-        // Accent shades provide the secondary white-to-blue ramp used by branded surfaces.
+        // Accent shades provide the secondary rose-to-neutral ramp used by branded surfaces.
         accent: {
-          50: '#FFFFFF',
-          100: '#EAF8FE',
-          200: '#CDEFFD',
-          300: '#9BDEFA',
-          400: '#5BCDF2',
-          500: '#1598D8',
-          600: '#0B8FD8',
-          700: '#176F9E',
-          800: '#2D4F68',
-          900: '#21465E',
-          950: '#071A2A',
+          50: '#FFFAF6',
+          100: '#F3EAEC',
+          200: '#EFE6E8',
+          300: '#E6D9DC',
+          400: '#D9C6CB',
+          500: '#A06B78',
+          600: '#8F5664',
+          700: '#734049',
+          800: '#5C3239',
+          900: '#4A3E43',
+          950: '#241C20',
         },
         // Gray and slate utilities share neutral zinc values so reused utilities
         // stay in the same neutral family as the dark application surfaces.
@@ -179,20 +179,20 @@ export default {
         sm: 'none',
         glass: 'none',
         'glass-sm': 'none',
-        glow: '0 0 20px rgba(0, 210, 255, 0.28)',
-        'glow-lg': '0 0 40px rgba(18, 167, 232, 0.35)',
+        glow: '0 0 20px rgba(115, 64, 73, 0.28)',
+        'glow-lg': '0 0 40px rgba(92, 50, 57, 0.35)',
         card: 'none',
         'card-hover': 'none',
         'inner-glow': 'inset 0 1px 0 rgba(255, 255, 255, 0.1)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-primary': 'linear-gradient(135deg, #00D2FF 0%, #0B8FD8 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #A06B78 0%, #734049 100%)',
         'gradient-dark': 'linear-gradient(135deg, #17171A 0%, #0A0A0B 100%)',
         'gradient-glass':
           'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
         'mesh-gradient':
-          'radial-gradient(at 40% 20%, rgba(0, 210, 255, 0.14) 0px, transparent 50%), radial-gradient(at 80% 0%, rgba(139, 221, 248, 0.12) 0px, transparent 50%), radial-gradient(at 0% 50%, rgba(18, 167, 232, 0.1) 0px, transparent 50%)',
+          'radial-gradient(at 40% 20%, rgba(115, 64, 73, 0.14) 0px, transparent 50%), radial-gradient(at 80% 0%, rgba(203, 176, 182, 0.12) 0px, transparent 50%), radial-gradient(at 0% 50%, rgba(143, 86, 100, 0.1) 0px, transparent 50%)',
       },
       // Transition utilities read the shared root timing variables also used by handwritten motion styles.
       transitionDuration: {
@@ -242,8 +242,8 @@ export default {
           '100%': { backgroundPosition: '200% 0' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 20px rgba(0, 210, 255, 0.28)' },
-          '100%': { boxShadow: '0 0 30px rgba(18, 167, 232, 0.4)' },
+          '0%': { boxShadow: '0 0 20px rgba(115, 64, 73, 0.28)' },
+          '100%': { boxShadow: '0 0 30px rgba(92, 50, 57, 0.4)' },
         },
       },
       backdropBlur: {

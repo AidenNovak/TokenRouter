@@ -1,0 +1,12 @@
+# =============================================================================
+# Meimaobing local deployment override
+# =============================================================================
+# Merge this file after the upstream compose file so the local branded image is
+# used without pulling the upstream image over it:
+#   docker compose -f docker-compose.yml -f docker-compose.meimaobing.yml up -d
+# Build the image from this fork first:
+#   docker build -t tokenrouter-meimaobing:local .
+services:
+  tokenrouter:
+    image: tokenrouter-meimaobing:local
+    pull_policy: never

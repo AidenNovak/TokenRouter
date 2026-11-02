@@ -30,7 +30,7 @@
           <div>
             <LocalizedEditor
               :label="t('admin.settings.payment.productNamePrefix')"
-              placeholder="TokenRouter"
+              :placeholder="DEFAULT_SITE_NAME"
               v-model="form.localized_settings.payment_product_name_prefix"
               :default-source-locale="getLocale()"
             />
@@ -50,7 +50,7 @@
             >
               {{
                 (resolveContent(form.localized_settings.payment_product_name_prefix, locale)
-                  .value || 'TokenRouter') +
+                  .value || DEFAULT_SITE_NAME) +
                 ' 100 ' +
                 (resolveContent(form.localized_settings.payment_product_name_suffix, locale)
                   .value || 'CNY')
@@ -520,6 +520,7 @@
 
 <script setup lang="ts">
 import { toRef } from 'vue'
+import { DEFAULT_SITE_NAME } from '@/brand/meimaobing'
 import Collapse from '@/components/common/Collapse.vue'
 import SettingRow from '@/components/common/settings/SettingRow.vue'
 import SettingToggleRow from '@/components/common/settings/SettingToggleRow.vue'

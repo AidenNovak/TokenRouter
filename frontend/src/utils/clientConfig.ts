@@ -1,6 +1,7 @@
 import type { ModelAttributes } from '@/api/modelAttributes.types'
 import type { Group } from '@/api/groups.types'
 import type { ProtocolID } from '@/api/protocols.types'
+import { BRAND_NAME_EN } from '@/brand/meimaobing'
 
 /**
  * clientConfig.ts exports selected gateway models into client configuration
@@ -278,7 +279,7 @@ export function buildClientConfig(input: {
     const files = [
       {
         path: `${folder}config.toml`,
-        content: `model_provider = "tokenrouter"\nmodel = ${quote(model)}\nreview_model = ${quote(model)}\ndisable_response_storage = true\n\n[model_providers.tokenrouter]\nname = "TokenRouter"\nbase_url = ${quote(apiBase)}\nwire_api = "responses"\nsupports_websockets = ${input.websocket === true}\n${auth}${input.websocket ? '\n\n[features]\nresponses_websockets_v2 = true' : ''}`,
+        content: `model_provider = "tokenrouter"\nmodel = ${quote(model)}\nreview_model = ${quote(model)}\ndisable_response_storage = true\n\n[model_providers.tokenrouter]\nname = "${BRAND_NAME_EN}"\nbase_url = ${quote(apiBase)}\nwire_api = "responses"\nsupports_websockets = ${input.websocket === true}\n${auth}${input.websocket ? '\n\n[features]\nresponses_websockets_v2 = true' : ''}`,
       },
     ]
     if (!input.directAuth)
@@ -333,7 +334,7 @@ default = ${quote(model)}`,
           provider: {
             tokenrouter: {
               npm,
-              name: 'TokenRouter',
+              name: BRAND_NAME_EN,
               options: {
                 baseURL: protocol === 'gemini_generate_content' ? `${base}/v1beta` : apiBase,
                 apiKey,

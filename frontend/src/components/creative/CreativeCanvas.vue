@@ -274,8 +274,8 @@ const ASSET_PROTOCOL = 'asset://'
  * SELECTION_COLOR and SELECTION_FILL give object borders and selection
  * rectangles the same canvas interaction color.
  */
-const SELECTION_COLOR = '#12A7E8'
-const SELECTION_FILL = 'rgba(18, 167, 232, 0.08)'
+const SELECTION_COLOR = '#734049'
+const SELECTION_FILL = 'rgba(115, 64, 73, 0.08)'
 /**
  * Apply selection defaults before either new images or restored objects are
  * constructed so both use the same interaction appearance.

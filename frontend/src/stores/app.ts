@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import type { Toast, ToastType } from '@/types/ui'
 import type { PublicSettings } from '@/api/settings.types'
+import { DEFAULT_SITE_NAME } from '@/brand/meimaobing'
 import { getLocale, i18n } from '@/i18n'
 import {
   checkUpdates as checkUpdatesAPI,
@@ -38,7 +39,7 @@ export const useAppStore = defineStore('app', () => {
   // callers.
   const publicSettingsLoaded = ref<boolean>(false)
   const publicSettingsLoading = ref<boolean>(false)
-  const defaultSiteName = ref<string>('TokenRouter')
+  const defaultSiteName = ref<string>(DEFAULT_SITE_NAME)
   const siteLogo = ref<string>('')
   const siteVersion = ref<string>('')
   const contactInfo = ref<string>('')
@@ -68,7 +69,7 @@ export const useAppStore = defineStore('app', () => {
     () => cachedPublicSettings.value?.backend_mode_enabled ?? false,
   )
   const siteName = computed(
-    () => cachedPublicSettings.value?.site_name || defaultSiteName.value || 'TokenRouter',
+    () => cachedPublicSettings.value?.site_name || defaultSiteName.value || DEFAULT_SITE_NAME,
   )
 
   // loadingCount records outstanding loading contributions; reset clears it and ordinary
@@ -286,7 +287,7 @@ export const useAppStore = defineStore('app', () => {
       window.__APP_CONFIG__ = { ...config }
     }
     cachedPublicSettings.value = config
-    defaultSiteName.value = config.site_name || 'TokenRouter'
+    defaultSiteName.value = config.site_name || DEFAULT_SITE_NAME
     siteLogo.value = config.site_logo || ''
     siteVersion.value = config.version || ''
     contactInfo.value = config.contact_info || ''
