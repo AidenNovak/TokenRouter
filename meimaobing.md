@@ -2,6 +2,13 @@
 
 本文件记录本 fork 相对上游 TokenRouter 的每一次定制。每条记录以公告形式追加，最新记录放在最上方；技术标识（API 请求头、配置键名、Go 包路径）保持上游原样，避免影响兼容性与上游合并。
 
+## 2026-11-03 · 本地品牌镜像重建与部署
+
+- **镜像**：使用仓库根目录 `Dockerfile` 重建品牌镜像，前端在容器内编译并嵌入 Go 二进制，标签为本地 `tokenrouter-meimaobing:local`。
+- **部署**：新增 `deploy/docker-compose.meimaobing.yml`，叠加在上游 compose 之后，把 `tokenrouter` 服务固定到本地品牌镜像并设置 `pull_policy: never`，避免被上游 `latest` 覆盖。
+- **数据**：保留现有 PostgreSQL / Redis 数据卷与 `.env` 配置；新容器启动时自动执行迁移（`308_meimaobing_brand.sql` 幂等）。
+- **验证**：容器 healthy，登录页、顶栏与 Dashboard 显示「没猫饼」、品牌 Logo 和玫瑰色主题。
+
 ## 2026-11-03 · 品牌薄层 v1：站点名称、Logo 与玫瑰色主题
 
 - **站点名称**：默认展示名由 TokenRouter 改为「没猫饼」，英文界面显示 Meimaobing。迁移只改写仍为上游默认名的安装，管理员自定义名称不受影响。
