@@ -12,6 +12,7 @@ import '@fontsource-variable/plus-jakarta-sans/wght-italic.css'
 import '@fontsource-variable/geist-mono'
 import '@fontsource-variable/noto-sans-sc'
 import './style.css'
+import './styles/meimaobing.css'
 
 // main.ts initializes browser presentation and mounts the Vue application after its
 // initial route is ready. Font imports precede the global stylesheet, and theme
@@ -55,7 +56,9 @@ async function bootstrap() {
   // Read injected settings after Pinia installation and before router installation,
   // allowing initial navigation and branding to observe startup configuration.
   appStore.initFromInjectedConfig()
-  if (appStore.siteName && appStore.siteName !== 'TokenRouter') {
+  // A configured or default brand name becomes the document title suffix. The
+  // static title already carries the brand for the brief pre-settings interval.
+  if (appStore.siteName) {
     document.title = `${appStore.siteName} - AI API Gateway`
   }
   updateFavicon(appStore.siteLogo)

@@ -618,6 +618,7 @@
 </template>
 
 <script setup lang="ts">
+import { BRAND_REPO_URL } from '@/brand/meimaobing'
 import { useLocaleRefresh } from '@/composables/useLocaleRefresh'
 import { getLocale } from '@/i18n'
 import { localizedErrorMessage } from '@/i18n/errors'
@@ -671,7 +672,7 @@ const docUrl = computed(() =>
 )
 // githubUrl supplies the project repository destination displayed by the public usage page
 // footer alongside documentation.
-const githubUrl = 'https://github.com/TokenFlux/TokenRouter'
+const githubUrl = BRAND_REPO_URL
 
 // Theme state controls the public page switch and reactive ring track colors for light and
 // dark backgrounds.
@@ -808,7 +809,7 @@ const RING_ANIMATION_MS = 1200
 // RING_GRADIENTS cycles four accent pairs across quota cards and supplies matching colors
 // for their displayed amounts.
 const RING_GRADIENTS = [
-  { from: '#00D2FF', to: '#8BDDF8' },
+  { from: '#734049', to: '#CBB0B6' },
   { from: '#6366F1', to: '#A5B4FC' },
   { from: '#10B981', to: '#6EE7B7' },
   { from: '#F59E0B', to: '#FCD34D' },
@@ -1523,7 +1524,7 @@ onUnmounted(() => {
   }
 }
 .skeleton {
-  background: linear-gradient(90deg, #ddf4fc 25%, #f6fcff 50%, #ddf4fc 75%);
+  background: linear-gradient(90deg, #e6d9dc 25%, #f3eaec 50%, #e6d9dc 75%);
   background-size: 200% 100%;
   animation: shimmer-kv 1.8s ease-in-out infinite;
   border-radius: var(--radius-surface);

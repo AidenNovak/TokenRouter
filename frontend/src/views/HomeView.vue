@@ -493,7 +493,7 @@
                 <div
                   class="flex-1 rounded-control bg-white/90 px-3 py-2 font-mono text-xs text-gray-600 shadow-sm ring-1 ring-gray-100 dark:bg-dark-950 dark:text-dark-300 dark:ring-dark-800"
                 >
-                  TOKENFLUX_API_KEY
+                  MEIMAOBING_API_KEY
                 </div>
               </div>
               <div

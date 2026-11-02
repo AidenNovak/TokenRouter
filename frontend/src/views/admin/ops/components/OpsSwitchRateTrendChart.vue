@@ -63,10 +63,10 @@ const { t } = useI18n()
 // colors.
 const { isDark } = useChartTheme()
 const colors = computed(() => ({
-  primary: '#00D2FF',
-  primaryAlpha: '#00D2FF26',
-  grid: isDark.value ? '#27272A' : '#DDF4FC',
-  text: isDark.value ? '#D4D4D8' : '#2D4F68',
+  primary: '#734049',
+  primaryAlpha: '#73404926',
+  grid: isDark.value ? '#27272A' : '#E6D9DC',
+  text: isDark.value ? '#D4D4D8' : '#5C3239',
 }))
 
 // totalRequests sums finite request counts to suppress charts whose history

@@ -28,7 +28,7 @@
           >
             <img
               v-if="settingsLoaded"
-              :src="siteLogo || '/logo.svg'"
+              :src="siteLogo || '/logo.png'"
               :alt="siteName"
               class="h-full w-full object-contain"
             />
@@ -229,7 +229,7 @@
               <!-- Administrator actions expose the repository and guide replay. -->
               <div v-if="authStore.isAdmin" class="menu-section">
                 <a
-                  href="https://github.com/TokenFlux/TokenRouter"
+                  :href="BRAND_REPO_URL"
                   target="_blank"
                   rel="noopener noreferrer"
                   @click="closeDropdown"
@@ -303,6 +303,7 @@
 </template>
 
 <script setup lang="ts">
+import { BRAND_REPO_URL } from '@/brand/meimaobing'
 import { vSegmented } from '@/directives/segmented'
 import MotionTransition from '@/components/common/MotionTransition.vue'
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'

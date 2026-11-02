@@ -529,8 +529,8 @@ const { isDark } = useChartTheme()
 // chartColors supplies the dashboard palette used by chart legends, axis ticks, and
 // grid lines in either theme.
 const chartColors = computed(() => ({
-  text: isDark.value ? '#D4D4D8' : '#2D4F68',
-  grid: isDark.value ? '#27272A' : '#DDF4FC',
+  text: isDark.value ? '#D4D4D8' : '#5C3239',
+  grid: isDark.value ? '#27272A' : '#E6D9DC',
 }))
 
 // User-trend chart options use the external tooltip renderer and sort tooltip items by

@@ -1,5 +1,6 @@
 import { reactive } from 'vue'
 import type { CustomMenuItem, CustomEndpoint, FooterLinkGroup } from '@/api/settings.types'
+import { DEFAULT_SITE_NAME } from '@/brand/meimaobing'
 import { originalContent, type LocalizedUpdate } from '@/i18n/content'
 import { getLocale } from '@/i18n'
 import { normalizeProviderSchedulingThresholdsMap } from '@/api/admin/settings'
@@ -160,9 +161,12 @@ export function createSettingsForm() {
         'home_content',
         'purchase_subscription_url',
         'footer_text',
-      ].map((key) => [key, originalContent(key === 'site_name' ? 'TokenRouter' : '', getLocale())]),
+      ].map((key) => [
+        key,
+        originalContent(key === 'site_name' ? DEFAULT_SITE_NAME : '', getLocale()),
+      ]),
     ) as Record<string, LocalizedUpdate<string>>,
-    site_name: 'TokenRouter',
+    site_name: DEFAULT_SITE_NAME,
     site_logo: '',
     site_subtitle: 'Subscription to API Conversion Platform',
     api_base_url: '',

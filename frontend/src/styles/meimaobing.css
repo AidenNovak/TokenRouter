@@ -1,0 +1,40 @@
+/*
+ * meimaobing.css is the fork-local brand layer. It loads after style.css and
+ * only sets surfaces that the shared Tailwind palette cannot express: the page
+ * background, soft brand blobs, selection color, and the focus ring.
+ */
+
+:root {
+  --page-bg: #efe6e8;
+  --mmb-primary: #734049;
+  --mmb-primary-hover: #5c3239;
+  --mmb-ring: rgba(115, 64, 73, 0.28);
+  --mmb-selection: rgba(115, 64, 73, 0.22);
+  --mmb-blobs:
+    radial-gradient(42rem 26rem at 10% -8%, rgba(200, 168, 174, 0.28) 0%, transparent 58%),
+    radial-gradient(32rem 22rem at 108% 8%, rgba(184, 154, 148, 0.18) 0%, transparent 55%);
+}
+
+html.dark {
+  --page-bg: #241c20;
+  --mmb-ring: rgba(203, 180, 185, 0.32);
+  --mmb-selection: rgba(203, 180, 185, 0.24);
+  --mmb-blobs:
+    radial-gradient(42rem 26rem at 10% -8%, rgba(122, 74, 86, 0.22) 0%, transparent 58%),
+    radial-gradient(32rem 22rem at 108% 8%, rgba(92, 50, 57, 0.2) 0%, transparent 55%);
+}
+
+body {
+  background-color: var(--page-bg);
+  background-image: var(--mmb-blobs);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: var(--mmb-selection);
+}
+
+:where(input, select, textarea):focus-visible {
+  border-color: var(--mmb-primary);
+  box-shadow: 0 0 0 3px var(--mmb-ring);
+}

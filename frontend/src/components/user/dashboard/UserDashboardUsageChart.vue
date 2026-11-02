@@ -251,7 +251,7 @@ type UsageDataset = ChartDataset<'line', Array<number | null>> & {
 
 // BRAND_LINE_COLOR supplies the theme-specific request and spending line color shared with
 // selected metric controls.
-const BRAND_LINE_COLOR = { light: '#12A7E8', dark: '#00D2FF' }
+const BRAND_LINE_COLOR = { light: '#734049', dark: '#CBB0B6' }
 // CARD_SURFACE matches card backgrounds so hover points and peak rings appear hollow against
 // the surrounding plot.
 const CARD_SURFACE = { light: '#FFFFFF', dark: '#0F0F10' }

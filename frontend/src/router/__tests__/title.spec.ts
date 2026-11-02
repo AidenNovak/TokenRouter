@@ -25,8 +25,8 @@ describe('resolveDocumentTitle', () => {
   // inputs use the default product name with the appropriate optional page
   // prefix.
   it('站点名为空时，回退默认站点名', () => {
-    expect(resolveDocumentTitle('Dashboard', '')).toBe('Dashboard - TokenRouter')
-    expect(resolveDocumentTitle(undefined, '   ')).toBe('TokenRouter')
+    expect(resolveDocumentTitle('Dashboard', '')).toBe('Dashboard - 没猫饼')
+    expect(resolveDocumentTitle(undefined, '   ')).toBe('没猫饼')
   })
 
   // The site name changes between two title calculations for the same page.
