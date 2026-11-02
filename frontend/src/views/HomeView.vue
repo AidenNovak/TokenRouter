@@ -536,7 +536,7 @@
             <div class="flex items-center gap-2.5">
               <span class="h-8 w-8 shrink-0 overflow-hidden rounded-control shadow-sm">
                 <img
-                  :src="siteLogo || '/logo.svg'"
+                  :src="siteLogo || '/logo.png'"
                   alt="Logo"
                   class="h-full w-full object-contain"
                 />

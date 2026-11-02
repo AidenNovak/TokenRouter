@@ -2,6 +2,12 @@
 
 本文件记录本 fork 相对上游 TokenRouter 的每一次定制。每条记录以公告形式追加，最新记录放在最上方；技术标识（API 请求头、配置键名、Go 包路径）保持上游原样，避免影响兼容性与上游合并。
 
+## 2026-11-03 · 页脚与公开页面 Logo 回退修正
+
+- **问题**：首页页脚、API Key 用量公开页与法律文档页在未配置自定义 Logo 时回退到上游的蓝色 `logo.svg`，品牌不一致。
+- **修正**：三处回退统一改为没猫饼 `logo.png`，与登录页、顶栏保持一致；上游 `logo.svg` 文件保留，不再作为默认展示。
+- **验证**：重建镜像并重新部署后，Playwright 确认首页页脚 `<img>` 实际加载 `/logo.png`（128×128），截图中页脚为没猫饼图标。
+
 ## 2026-11-03 · 本地品牌镜像重建与部署
 
 - **镜像**：使用仓库根目录 `Dockerfile` 重建品牌镜像，前端在容器内编译并嵌入 Go 二进制，标签为本地 `tokenrouter-meimaobing:local`。默认 `goproxy.cn` 不可达时用 `--build-arg GOPROXY=https://proxy.golang.org,direct --build-arg GOSUMDB=sum.golang.org`。
