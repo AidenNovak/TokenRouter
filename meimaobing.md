@@ -4,7 +4,7 @@
 
 ## 2026-11-03 · 本地品牌镜像重建与部署
 
-- **镜像**：使用仓库根目录 `Dockerfile` 重建品牌镜像，前端在容器内编译并嵌入 Go 二进制，标签为本地 `tokenrouter-meimaobing:local`。
+- **镜像**：使用仓库根目录 `Dockerfile` 重建品牌镜像，前端在容器内编译并嵌入 Go 二进制，标签为本地 `tokenrouter-meimaobing:local`。默认 `goproxy.cn` 不可达时用 `--build-arg GOPROXY=https://proxy.golang.org,direct --build-arg GOSUMDB=sum.golang.org`。
 - **部署**：新增 `deploy/docker-compose.meimaobing.yml`，叠加在上游 compose 之后，把 `tokenrouter` 服务固定到本地品牌镜像并设置 `pull_policy: never`，避免被上游 `latest` 覆盖。
 - **数据**：保留现有 PostgreSQL / Redis 数据卷与 `.env` 配置；新容器启动时自动执行迁移（`308_meimaobing_brand.sql` 幂等）。
 - **验证**：容器 healthy，登录页、顶栏与 Dashboard 显示「没猫饼」、品牌 Logo 和玫瑰色主题。
